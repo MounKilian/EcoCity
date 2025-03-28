@@ -653,7 +653,7 @@ export default function EcoCityTransportGame() {
     setTurn(1)
     setGameOver(false)
     setWinMessage("")
-    setBudget(1000)
+    setBudget(2000)
     setPollution(60)
     setEcology(40)
     setSatisfaction(50)
@@ -674,6 +674,10 @@ export default function EcoCityTransportGame() {
       bikeSharing: 0,
     })
     setGameLog([{ turn: 0, message: "Bienvenue à EcoCity! Vous êtes le nouveau responsable des transports." }])
+    setCitizenQuote({
+      text: "Bienvenue dans notre ville! Que ferez-vous pour améliorer nos transports?",
+      type: "neutral",
+    })
   }
 
   // Get status color based on value
@@ -844,12 +848,23 @@ export default function EcoCityTransportGame() {
                       : "text-blue-700 dark:text-blue-300"
                 }`}
               >
-                Voix des citoyens
+              Voix des citoyens
               </AlertTitle>
+              <img
+                src={`/asset/${
+                  citizenQuote.type === "positive"
+                    ? ["perso1", "perso2", "perso3"][Math.floor(Math.random() * 3)]
+                    : citizenQuote.type === "negative"
+                      ? ["perso4", "perso5"][Math.floor(Math.random() * 2)]
+                      : "perso4"
+                }.gif`}
+                className="mt-2 mb-2 w-24 h-24 object-cover rounded-lg shadow"
+              />
               <AlertDescription className="mt-1 italic">"{citizenQuote.text}"</AlertDescription>
             </div>
           </div>
         </Alert>
+
 
         {/* Event Alert */}
         {eventActive && currentEvent && (
