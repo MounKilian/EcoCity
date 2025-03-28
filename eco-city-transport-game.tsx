@@ -751,7 +751,7 @@ export default function EcoCityTransportGame() {
           <div>
             <h1 className="text-3xl font-bold">EcoCity: Gestion des Transports</h1>
             <p className="text-muted-foreground">
-              Créez une ville durable en équilibrant écologie, satisfaction et budget
+            Ce n’est pas juste un jeu, c’est une prise de conscience sur le futur des villes et des mobilités !♻️
             </p>
           </div>
           <div className="flex items-center gap-4 mt-4 md:mt-0">
